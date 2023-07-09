@@ -8,8 +8,8 @@ var cors = require('cors');
 app.use(cors());
 
 // 가장 하단에 놓아야 함
-app.get('*', function (요청, 응답) {
-  응답.sendFile(path.join(__dirname, '/react-project/build/index.html'));
+app.get('/api', function (res, req) {
+  req.json({"user":"helloworld"});
 });
 
 app.listen(8080, function () {
